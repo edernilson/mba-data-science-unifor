@@ -7,8 +7,8 @@ RESOURCE_GROUP="rg_${suffix}"
 RESOURCE_PROVIDER="Microsoft.MachineLearning"
 REGION="eastus2"
 WORKSPACE_NAME="mlw_${suffix}"
-COMPUTE_INSTANCE="ci_${suffix}"
-COMPUTE_CLUSTER="aml_cluster_${suffix}"
+COMPUTE_INSTANCE="ci${suffix}"
+COMPUTE_CLUSTER="aml-cluster-${suffix}"
 
 # Register the Azure Machine Learning resource provider in the subscription
 echo "Register the Machine Learning resource provider:"
