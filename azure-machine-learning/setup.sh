@@ -1,6 +1,6 @@
 #! /usr/bin/sh
 
-suffix="unifor_eder_lab"
+suffix="uniforlab"
 
 # Set the necessary variables
 RESOURCE_GROUP="rg_${suffix}"
