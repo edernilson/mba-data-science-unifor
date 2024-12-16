@@ -58,15 +58,26 @@ if clicked:
     
     data = {
         "input_data": {
-            "columns": ["tipo_imovel", "regiao", "area", "quartos", "vagas", "suites", "banheiros"],
+            "columns": [
+                "tipo",
+                "area",
+                "quartos",
+                "vagas",
+                "suites",
+                "banheiros",
+                "regiao"
+            ],
             "index": [0],
-            "data": [[tipo_imovel, regiao, area, quartos, vagas, suites, banheiros]]
+            "data": [[tipo_imovel, area, quartos, vagas, suites, banheiros, regiao]]
         }
     }
+
     body = str.encode(json.dumps(data))
 
-    url = '[URL]'
-    api_key = '[API_KEY]'
+    # print(body)
+
+    url = '[URL DO SERVIÇO DE PREDIÇÃO]'
+    api_key = '[PRIMARY KEY]'
     headers = {
         'Content-Type': 'application/json',
         'Authorization': ('Bearer ' + api_key)
@@ -75,14 +86,15 @@ if clicked:
     req = urllib.request.Request(url, body, headers)
     try:
         response = urllib.request.urlopen(req)
-        result = response.read()
-        print(result)
+        result = response.read().decode('utf-8')
+        # print(type(result))
+        valor_predito = float(result.replace('[','').replace(']',''))
     except urllib.error.HTTPError as e:
         print("A requisição falhou: " + str(e.code))
         print(e.info())
         print(e.read().decode('utf-8', 'ignore'))
 
-    valor_predito = 100
+    # valor_predito = 100
     
 with right_column:
-    st.write(f"O valor predito para o imóvel na Região {regiao} é: {valor_predito}")
+    st.write(f"O valor predito para o imóvel na Região {regiao} é: {valor_predito:9.2f}")

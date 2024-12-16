@@ -13,6 +13,7 @@
     [ ] Train-Vehicle-Predictor
     [X] Novo trabalho de ML automatizado
         Nome: mba_unifor_pipeline
-[ ] Disponibilizar o modelo na API
-[ ] Copiar URL e primaryKey para acesso pelo web app
-[ ] Executar predição no Streamlit
+        Metrica: normalized_root_mean_squared_error	
+[X] Disponibilizar o modelo na API
+[X] Copiar URL e primaryKey para acesso pelo web app
+[X] Executar predição no Streamlit
